@@ -2,9 +2,10 @@
   "name": "rfui-react",
   "version": "0.1.11",
   "description": "This repo is for the NPM package for [RFUI](https://rfui.deno.dev/).",
-  "main": "rollup.config.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c",
+    "start": "rollup -c -w"
   },
   "keywords": [],
   "author": "",
@@ -20,5 +21,12 @@
     "rollup": "^4.9.6",
     "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.3.3"
-  }
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "files": [
+    "dist"
+  ]
 }
