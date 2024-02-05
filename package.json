@@ -1,5 +1,5 @@
 {
-  "name": "rfui-react",
+  "name": "@adamzerner/rfui-react",
   "version": "0.1.11",
   "description": "This repo is for the NPM package for [RFUI](https://rfui.deno.dev/).",
   "main": "dist/index.js",
