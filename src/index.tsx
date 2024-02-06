@@ -1,1 +1,1 @@
-export { Button } from "./atoms/button";
+export { Badge } from "./atoms/badge";
