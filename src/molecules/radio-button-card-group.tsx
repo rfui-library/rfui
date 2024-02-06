@@ -5,6 +5,8 @@ import { Flex } from "../helpers/flex";
 import { Stack } from "../helpers/stack";
 
 export type RadioButtonCardGroupType = {
+  selectedItemName: string | null;
+  onChange: (newSelectedItemName: string) => void;
   padding?: "sm" | "md" | "lg";
   rounded?: "square" | "sm" | "lg";
   children: ReactNode;
@@ -12,9 +14,10 @@ export type RadioButtonCardGroupType = {
 
 export type RadioButtonCardGroupItemType = {
   name: string;
-  value?: RadioButtonType["value"];
-  selectedItemName: Signal<string | null>;
+  value: RadioButtonType["value"];
+  isSelected: boolean;
   radioButtonRest?: Omit<RadioButtonType, "size" | "name" | "value">;
+  onClick: (name: string) => void;
   children: ReactNode;
 };
 
@@ -23,20 +26,24 @@ export type RadioButtonCardGroupItemType = {
  *
  * @see {@link https://rfui.deno.dev/molecules/radio-button-card-group}
  *
+ * Don't pass `onClick` to `RadioButtonCardGroupItem` even though it is part of the type. It gets passed internally.
+ *
  * @example
- * <RadioButtonCardGroup>
- *   <RadioButtonCardGroupItem name="one" selectedItemName={selectedItemName}>
+ * <RadioButtonCardGroup selectedItemName={selectedItemName} onChange={onChange}>
+ *   <RadioButtonCardGroupItem name="one">
  *     One
  *   </RadioButtonCardGroupItem>
- *    <RadioButtonCardGroupItem name="two" selectedItemName={selectedItemName}>
+ *    <RadioButtonCardGroupItem name="two">
  *     Two
  *   </RadioButtonCardGroupItem>
- *    <RadioButtonCardGroupItem name="three" selectedItemName={selectedItemName}>
+ *    <RadioButtonCardGroupItem name="three">
  *     Three
  *   </RadioButtonCardGroupItem>
  * </RadioButtonCardGroup>
  */
 export const RadioButtonCardGroup = ({
+  selectedItemName,
+  onChange,
   padding = "md",
   rounded,
   children,
@@ -81,7 +88,16 @@ export const RadioButtonCardGroup = ({
         }
       `}
       </style>
-      <Stack className={containerClass}>{children}</Stack>
+      <Stack className={containerClass}>
+        {React.Children.toArray(children)
+          .filter(React.isValidElement)
+          .map((child: React.ReactElement<RadioButtonCardGroupItemType>) =>
+            React.cloneElement(child, {
+              isSelected: selectedItemName === child.props.value,
+              onClick: onChange,
+            }),
+          )}
+      </Stack>
     </>
   );
 };
@@ -89,14 +105,11 @@ export const RadioButtonCardGroup = ({
 export const RadioButtonCardGroupItem = ({
   name,
   value,
-  selectedItemName,
+  isSelected,
   radioButtonRest,
+  onClick,
   children,
 }: RadioButtonCardGroupItemType) => {
-  const isSelected = name === selectedItemName.value;
-  const handleClick = () => {
-    selectedItemName.value = name;
-  };
   let containerClass =
     "radio-button-card-group-item border items-center cursor-pointer";
 
@@ -105,7 +118,12 @@ export const RadioButtonCardGroupItem = ({
     : " border-2 border-neutral-100";
 
   return (
-    <Flex className={containerClass} onClick={handleClick}>
+    <Flex
+      className={containerClass}
+      onClick={() => {
+        onClick(name);
+      }}
+    >
       <RadioButton
         name={name}
         checked={isSelected}
