@@ -1,6 +1,5 @@
 import * as React from "react";
 import { ReactNode } from "react";
-import { getChildren } from "../utilities/get-children";
 
 export type CardType = {
   rounded?: "square" | "sm" | "lg";
@@ -103,24 +102,19 @@ export const Card = ({
   );
 };
 
-// deno-lint-ignore no-explicit-any
-const getComponents = (_children: any) => {
-  const children = getChildren(_children);
+const getComponents = (children: ReactNode) => {
+  const childrenArray = React.Children.toArray(children);
 
-  if (!Array.isArray(children)) {
-    return { cardBody: children, isArray: false };
-  }
-
-  const cardHeader = children.find(
-    (child) => child && child.type && child.type.name === CardHeader.name,
+  const cardHeader = childrenArray.find(
+    (child: any) => child && child.type && child.type.name === CardHeader.name,
   );
 
-  const cardBody = children.find(
-    (child) => child && child.type && child.type.name === CardBody.name,
+  const cardBody = childrenArray.find(
+    (child: any) => child && child.type && child.type.name === CardBody.name,
   );
 
-  const cardFooter = children.find(
-    (child) => child && child.type && child.type.name === CardFooter.name,
+  const cardFooter = childrenArray.find(
+    (child: any) => child && child.type && child.type.name === CardFooter.name,
   );
 
   if (!cardBody) {
@@ -129,7 +123,12 @@ const getComponents = (_children: any) => {
     );
   }
 
-  return { cardHeader, cardBody, cardFooter, isArray: true };
+  return {
+    cardHeader,
+    cardBody,
+    cardFooter,
+    isArray: React.Children.count(children) > 1,
+  };
 };
 
 export const CardHeader = ({

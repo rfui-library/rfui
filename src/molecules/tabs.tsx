@@ -1,7 +1,6 @@
 import * as React from "react";
 import { ReactNode, useState } from "react";
 import { Flex } from "../helpers/flex";
-import { getChildren } from "../utilities/get-children";
 
 export type TabsType = {
   fullWidth?: boolean;
@@ -44,24 +43,16 @@ export const Tabs = ({ fullWidth = false, children, ...rest }: TabsType) => {
   );
 };
 
-const getTabNames = (_children: any) => {
-  const children = getChildren(_children);
+const getTabNames = (children: ReactNode) => {
+  const childrenArray = React.Children.toArray(children);
 
-  if (!Array.isArray(children)) {
-    return [children.props.tabName];
-  }
-
-  return children.map((child) => child.props.tabName);
+  return childrenArray.map((child: any) => child.props.tabName);
 };
 
-const getActiveTabSection = (_children: any, tabName: string) => {
-  const children = getChildren(_children);
+const getActiveTabSection = (children: ReactNode, tabName: string) => {
+  const childrenArray = React.Children.toArray(children);
 
-  if (!Array.isArray(children)) {
-    return children;
-  }
-
-  return children.find((child) => child.props.tabName === tabName);
+  return childrenArray.find((child: any) => child.props.tabName === tabName);
 };
 
 const Tab = ({
