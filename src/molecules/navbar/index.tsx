@@ -36,7 +36,7 @@ export const Navbar = ({
   children,
   ...rest
 }: NavbarType) => {
-  const { navbarLeft, navbarRight, numItems } = getComponents(children);
+  const { navbarLeft, navbarRight } = getComponents(children);
   const { className: restClass, ...restWithoutClass } = rest;
   let containerClass = "w-full px-auto";
 

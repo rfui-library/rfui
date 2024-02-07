@@ -4,7 +4,7 @@ import { Input } from "../atoms/input";
 import { RadioButton } from "../atoms/radio-button";
 import { Flex } from "../helpers/flex";
 import { XCircleIcon } from "../icons/x-circle-icon";
-import { PasswordInput } from "./molecules/password-input";
+import { PasswordInput } from "../molecules/password-input";
 
 export type FormFieldType = {
   label: string;
@@ -124,7 +124,7 @@ export const FormField = ({
           size={size}
           rounded={rounded}
           invalid={invalid}
-          class={`block w-full ${inputRest?.className}`}
+          className={`block w-full ${inputRest?.className}`}
           {...inputRest}
         />
       ) : (
