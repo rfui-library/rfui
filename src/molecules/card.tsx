@@ -105,6 +105,10 @@ export const Card = ({
 const getComponents = (children: ReactNode) => {
   const childrenArray = React.Children.toArray(children);
 
+  if (childrenArray.length === 1) {
+    return { cardBody: children, isArray: false };
+  }
+
   const cardHeader = childrenArray.find(
     (child: any) => child && child.type && child.type.name === CardHeader.name,
   );

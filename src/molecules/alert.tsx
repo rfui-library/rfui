@@ -102,6 +102,10 @@ export const Alert = ({
 const getComponents = (children: ReactNode) => {
   const childrenArray = React.Children.toArray(children);
 
+  if (childrenArray.length === 1) {
+    return { alertBody: children };
+  }
+
   const alertHeader = childrenArray.find(
     (child: any) => child && child.type && child.type.name === AlertHeader.name,
   );
