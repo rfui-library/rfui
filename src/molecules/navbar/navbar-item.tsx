@@ -41,7 +41,7 @@ export const NavbarItem = ({
           className="py-6 flex items-center justify-between"
         >
           <div>{children}</div>
-          <ChevronRightIcon class="relative top-px" />
+          <ChevronRightIcon className="relative top-px" />
         </Link>
       </Container>
 
