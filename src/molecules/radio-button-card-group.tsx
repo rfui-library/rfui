@@ -14,7 +14,7 @@ export type RadioButtonCardGroupType = {
 
 export type RadioButtonCardGroupItemType = {
   name: string;
-  value: RadioButtonType["value"];
+  value: string;
   isSelected?: boolean;
   radioButtonRest?: Omit<RadioButtonType, "size" | "name" | "value">;
   onClick?: (name: string) => void;
@@ -122,7 +122,7 @@ export const RadioButtonCardGroupItem = ({
       className={containerClass}
       onClick={() => {
         if (onClick) {
-          onClick(name);
+          onClick(value);
         }
       }}
     >
