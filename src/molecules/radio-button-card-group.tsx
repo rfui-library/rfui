@@ -15,9 +15,9 @@ export type RadioButtonCardGroupType = {
 export type RadioButtonCardGroupItemType = {
   name: string;
   value: RadioButtonType["value"];
-  isSelected: boolean;
+  isSelected?: boolean;
   radioButtonRest?: Omit<RadioButtonType, "size" | "name" | "value">;
-  onClick: (name: string) => void;
+  onClick?: (name: string) => void;
   children: ReactNode;
 };
 
@@ -30,13 +30,13 @@ export type RadioButtonCardGroupItemType = {
  *
  * @example
  * <RadioButtonCardGroup selectedItemName={selectedItemName} onChange={onChange}>
- *   <RadioButtonCardGroupItem name="one">
+ *   <RadioButtonCardGroupItem name="favorite-number" value="one">
  *     One
  *   </RadioButtonCardGroupItem>
- *    <RadioButtonCardGroupItem name="two">
+ *    <RadioButtonCardGroupItem name="favorite-number" value="two">
  *     Two
  *   </RadioButtonCardGroupItem>
- *    <RadioButtonCardGroupItem name="three">
+ *    <RadioButtonCardGroupItem name="favorite-number" value="three">
  *     Three
  *   </RadioButtonCardGroupItem>
  * </RadioButtonCardGroup>
@@ -121,7 +121,9 @@ export const RadioButtonCardGroupItem = ({
     <Flex
       className={containerClass}
       onClick={() => {
-        onClick(name);
+        if (onClick) {
+          onClick(name);
+        }
       }}
     >
       <RadioButton
