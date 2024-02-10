@@ -2,6 +2,7 @@ import * as React from "react";
 import { Checkbox } from "../atoms/checkbox";
 import { Input } from "../atoms/input";
 import { RadioButton } from "../atoms/radio-button";
+import { Switch } from "../atoms/switch";
 import { Flex } from "../helpers/flex";
 import { XCircleIcon } from "../icons/x-circle-icon";
 import { PasswordInput } from "../molecules/password-input";
@@ -12,7 +13,8 @@ export type FormFieldType = {
   value?: React.InputHTMLAttributes<HTMLInputElement>["value"];
   type?:
     | React.InputHTMLAttributes<HTMLInputElement>["type"]
-    | "rfui-password-input";
+    | "rfui-password-input"
+    | "switch";
   required?: boolean;
   requiredIndicator?: "text" | "asterisk" | "none";
   optionalIndicator?: "text" | "asterisk" | "none";
@@ -101,6 +103,15 @@ export const FormField = ({
           required={required}
           size={size}
           invalid={invalid}
+          className={`mt-1 ${inputRest?.className}`}
+          {...inputRest}
+        />
+      ) : type === "switch" ? (
+        <Switch
+          id={id}
+          name={name}
+          value={value}
+          required={required}
           className={`mt-1 ${inputRest?.className}`}
           {...inputRest}
         />
