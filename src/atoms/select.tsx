@@ -1,12 +1,12 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 
 export type SelectType = {
   size?: "sm" | "md" | "lg";
   rounded?: "square" | "sm" | "lg" | "full";
   invalid?: boolean;
   children?: ReactNode;
-} & Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "size">;
+} & Omit<ComponentProps<"select">, "size">;
 
 /** *
  * @function Select

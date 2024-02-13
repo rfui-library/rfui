@@ -1,12 +1,12 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 
 export type BadgeType = {
   type?: "neutral" | "info" | "success" | "warning" | "danger";
   size?: "sm" | "md" | "lg";
   rounded?: "square" | "sm" | "lg" | "full";
   children: ReactNode;
-} & Omit<React.HTMLAttributes<HTMLDivElement>, "size">;
+} & Omit<ComponentProps<"div">, "size">;
 
 /**
  * @function Badge

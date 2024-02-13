@@ -1,5 +1,5 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 
 export type ButtonType = {
   variant?:
@@ -14,7 +14,7 @@ export type ButtonType = {
   isLoading?: boolean;
   loadingContent?: string;
   children: ReactNode;
-} & Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, "icon" | "size">;
+} & Omit<ComponentProps<"button">, "icon" | "size">;
 
 /** *
  * @function Button

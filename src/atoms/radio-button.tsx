@@ -1,9 +1,10 @@
+import type { ComponentProps } from "react";
 import * as React from "react";
 
 export type RadioButtonType = {
   size?: "sm" | "md" | "lg";
   invalid?: boolean;
-} & Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">;
+} & Omit<ComponentProps<"input">, "size">;
 
 /** *
  * @function RadioButton

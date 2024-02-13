@@ -1,5 +1,5 @@
+import type { ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 
 export const NavbarLeft = ({ children }: { children: ReactNode }) => {
   return (

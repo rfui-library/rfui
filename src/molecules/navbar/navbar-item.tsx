@@ -1,5 +1,5 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 import { Link } from "../../atoms/link";
 import { Container } from "../../helpers/container";
 import { ChevronRightIcon } from "../../icons/chevron-right";
@@ -13,7 +13,7 @@ export const NavbarItem = ({
   href: string;
   isActive?: boolean;
   children: ReactNode;
-} & React.LiHTMLAttributes<HTMLLIElement>) => {
+} & ComponentProps<"li">) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let containerClass =
     "inline-block border-b border-b-neutral-200 sm:border-b-neutral-50 max-sm:hover:bg-neutral-100/50";

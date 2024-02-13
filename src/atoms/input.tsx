@@ -1,10 +1,11 @@
+import type { ComponentProps } from "react";
 import * as React from "react";
 
 export type InputType = {
   size?: "sm" | "md" | "lg";
   rounded?: "square" | "sm" | "lg" | "full";
   invalid?: boolean;
-} & Omit<React.InputHTMLAttributes<HTMLInputElement>, "size">;
+} & Omit<ComponentProps<"input">, "size">;
 
 /** *
  * @function Input

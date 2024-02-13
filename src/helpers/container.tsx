@@ -1,10 +1,10 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 
 export type ContainerType = {
   size?: "sm" | "md" | "lg" | "xl";
   children: ReactNode;
-} & Omit<React.HTMLAttributes<HTMLDivElement>, "size">;
+} & Omit<ComponentProps<"div">, "size">;
 
 /** *
  * @function Container

@@ -1,9 +1,9 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 
 export type InlineCodeType = {
   children: ReactNode;
-} & React.HTMLAttributes<HTMLElement>;
+} & ComponentProps<"code">;
 
 /** *
  * @function InlineCode

@@ -1,5 +1,6 @@
+import type { ReactNode } from "react";
 import * as React from "react";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import { Checkbox, CheckboxType } from "../atoms/checkbox";
 import { Flex } from "../helpers/flex";
 import { Stack } from "../helpers/stack";

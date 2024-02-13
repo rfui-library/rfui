@@ -1,10 +1,10 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 
 export type OLType = {
   bulletLocation?: "inside" | "outside";
   children: ReactNode;
-} & React.OlHTMLAttributes<HTMLOListElement>;
+} & ComponentProps<"ol">;
 
 /** *
  * @function OL

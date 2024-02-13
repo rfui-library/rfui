@@ -1,5 +1,5 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 import { Container, type ContainerType } from "../../helpers/container";
 import { Flex } from "../../helpers/flex";
 import { Stack } from "../../helpers/stack";
@@ -14,7 +14,7 @@ export type NavbarType = {
   background?: "neutral" | "none";
   sticky?: boolean;
   children: ReactNode;
-} & Omit<React.HTMLAttributes<HTMLElement>, "size">;
+} & Omit<ComponentProps<"nav">, "size">;
 
 /** *
  * @function Navbar

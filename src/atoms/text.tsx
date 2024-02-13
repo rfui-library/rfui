@@ -1,11 +1,11 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 import { Stack } from "../helpers/stack";
 
 export type TextType = {
   size?: "sm" | "md" | "lg";
   children: ReactNode;
-} & Omit<React.HTMLAttributes<HTMLDivElement>, "size">;
+} & Omit<ComponentProps<"div">, "size">;
 
 /** *
  * @function Text

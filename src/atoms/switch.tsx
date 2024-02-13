@@ -1,6 +1,7 @@
+import type { ComponentProps } from "react";
 import * as React from "react";
 
-export type SwitchType = React.InputHTMLAttributes<HTMLInputElement>;
+export type SwitchType = ComponentProps<"input">;
 
 /** *
  * @function Switch

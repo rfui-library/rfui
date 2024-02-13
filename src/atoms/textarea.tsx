@@ -1,11 +1,11 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 
 export type TextareaType = {
   rounded?: "square" | "sm" | "lg";
   invalid?: boolean;
   children?: ReactNode;
-} & React.TextareaHTMLAttributes<HTMLTextAreaElement>;
+} & ComponentProps<"textarea">;
 
 /** *
  * @function Textarea

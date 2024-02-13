@@ -1,11 +1,11 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 import { Link } from "./link";
 
 export type H2Type = {
   inPageLink?: string;
   children: ReactNode;
-} & React.HTMLAttributes<HTMLHeadingElement>;
+} & ComponentProps<"h2">;
 
 /** *
  * @function H1

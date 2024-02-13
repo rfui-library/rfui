@@ -1,3 +1,4 @@
+import type { ComponentProps } from "react";
 import * as React from "react";
 import { useState } from "react";
 import { Input, InputType } from "../atoms/input";
@@ -5,7 +6,7 @@ import { Flex } from "../helpers/flex";
 
 export type PasswordInputType = {
   defaultVisibility?: "hidden" | "shown";
-  containerProps?: Omit<React.HTMLAttributes<HTMLDivElement>, "size">;
+  containerProps?: Omit<ComponentProps<"div">, "size">;
 } & InputType;
 
 /** *

@@ -1,9 +1,9 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 
 export type H1Type = {
   children: ReactNode;
-} & React.HTMLAttributes<HTMLHeadingElement>;
+} & ComponentProps<"h1">;
 
 /** *
  * @function H1

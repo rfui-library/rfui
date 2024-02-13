@@ -1,9 +1,9 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 
 export type HighlightType = {
   children: ReactNode;
-} & React.HTMLAttributes<HTMLUnknownElement>;
+} & ComponentProps<"mark">;
 
 /** *
  * @function Highlight

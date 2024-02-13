@@ -1,11 +1,12 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import { Flex } from "../helpers/flex";
 
 export type TabsType = {
   fullWidth?: boolean;
   children: ReactNode;
-} & React.HTMLAttributes<HTMLDivElement>;
+} & ComponentProps<"div">;
 
 /** *
  * @function Tabs

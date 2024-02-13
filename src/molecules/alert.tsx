@@ -1,5 +1,6 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode, useState } from "react";
+import { useState } from "react";
 import { Flex } from "../helpers/flex";
 import { CloseIcon } from "../icons/close-icon";
 
@@ -7,7 +8,7 @@ export type AlertType = {
   variant?: "success" | "info" | "warning" | "danger" | "neutral";
   isDismissable?: boolean;
   children: any;
-} & Omit<React.HTMLAttributes<HTMLDivElement>, "size">;
+} & Omit<ComponentProps<"div">, "size">;
 
 /** *
  * @function Alert
@@ -126,14 +127,14 @@ const getComponents = (children: ReactNode) => {
 export const AlertHeader = ({
   children,
   ...rest
-}: { children: ReactNode } & React.HTMLAttributes<HTMLDivElement>) => {
+}: { children: ReactNode } & ComponentProps<"div">) => {
   return <div {...rest}>{children}</div>;
 };
 
 export const AlertBody = ({
   children,
   ...rest
-}: { children: ReactNode } & React.HTMLAttributes<HTMLDivElement>) => {
+}: { children: ReactNode } & ComponentProps<"div">) => {
   return <div {...rest}>{children}</div>;
 };
 

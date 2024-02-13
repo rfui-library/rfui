@@ -1,5 +1,5 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 
 export type CardType = {
   rounded?: "square" | "sm" | "lg";
@@ -9,7 +9,7 @@ export type CardType = {
   topAccent?: boolean;
   leftAccent?: boolean;
   children: ReactNode;
-} & Omit<React.HTMLAttributes<HTMLDivElement>, "size">;
+} & Omit<ComponentProps<"div">, "size">;
 
 /** *
  * @function Card
@@ -138,7 +138,7 @@ const getComponents = (children: ReactNode) => {
 export const CardHeader = ({
   children,
   ...rest
-}: { children: ReactNode } & React.HTMLAttributes<HTMLDivElement>) => {
+}: { children: ReactNode } & ComponentProps<"div">) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "rfui-card-header";
 
@@ -156,7 +156,7 @@ export const CardHeader = ({
 export const CardBody = ({
   children,
   ...rest
-}: { children: ReactNode } & React.HTMLAttributes<HTMLDivElement>) => {
+}: { children: ReactNode } & ComponentProps<"div">) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "rfui-card-body";
 
@@ -174,7 +174,7 @@ export const CardBody = ({
 export const CardFooter = ({
   children,
   ...rest
-}: { children: ReactNode } & React.HTMLAttributes<HTMLDivElement>) => {
+}: { children: ReactNode } & ComponentProps<"div">) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "rfui-card-footer";
 

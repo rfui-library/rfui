@@ -1,10 +1,11 @@
+import type { ComponentProps } from "react";
 import * as React from "react";
 import { useEffect } from "react";
 
 export type CodeBlockType = {
   code: string;
   language?: string;
-} & React.HTMLAttributes<HTMLPreElement>;
+} & ComponentProps<"pre">;
 
 /** *
  * @function CodeBlock

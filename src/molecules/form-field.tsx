@@ -1,3 +1,4 @@
+import type { ComponentProps } from "react";
 import * as React from "react";
 import { Checkbox } from "../atoms/checkbox";
 import { Input } from "../atoms/input";
@@ -9,12 +10,9 @@ import { PasswordInput } from "../molecules/password-input";
 
 export type FormFieldType = {
   label: string;
-  name?: React.InputHTMLAttributes<HTMLInputElement>["name"];
-  value?: React.InputHTMLAttributes<HTMLInputElement>["value"];
-  type?:
-    | React.InputHTMLAttributes<HTMLInputElement>["type"]
-    | "rfui-password-input"
-    | "switch";
+  name?: ComponentProps<"input">["name"];
+  value?: ComponentProps<"input">["value"];
+  type?: ComponentProps<"input">["type"] | "rfui-password-input" | "switch";
   required?: boolean;
   requiredIndicator?: "text" | "asterisk" | "none";
   optionalIndicator?: "text" | "asterisk" | "none";
@@ -24,10 +22,10 @@ export type FormFieldType = {
   invalid?: boolean;
   errorText?: string;
   inputRest?: Omit<
-    React.HTMLAttributes<HTMLInputElement>,
+    ComponentProps<"input">,
     "name" | "value" | "type" | "required" | "size" | "rounded" | "invalid"
   >;
-} & Omit<React.HTMLAttributes<HTMLDivElement>, "size">;
+} & Omit<ComponentProps<"div">, "size">;
 
 /** *
  * @function FormField

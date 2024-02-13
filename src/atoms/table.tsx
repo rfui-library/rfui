@@ -1,5 +1,5 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 
 export type TableType = {
   bordered?: boolean;
@@ -9,7 +9,7 @@ export type TableType = {
   stickyHeader?: boolean;
   stickyFirstColumn?: boolean;
   children?: ReactNode;
-} & React.TableHTMLAttributes<HTMLTableElement>;
+} & ComponentProps<"table">;
 
 /** *
  * @function Table

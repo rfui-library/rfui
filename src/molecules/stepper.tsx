@@ -1,3 +1,4 @@
+import type { ComponentProps } from "react";
 import * as React from "react";
 import { useState } from "react";
 import { Flex } from "../helpers/flex";
@@ -10,7 +11,7 @@ export type StepperType = {
   onChange?: (newValue: number) => void;
   min?: number;
   max?: number;
-} & Omit<React.HTMLAttributes<HTMLDivElement>, "size" | "min" | "max">;
+} & Omit<ComponentProps<"div">, "size" | "min" | "max">;
 
 /** *
  * @function Stepper

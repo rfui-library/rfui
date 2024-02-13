@@ -1,12 +1,10 @@
+import type { ComponentProps } from "react";
 import * as React from "react";
 
-export const CloseIcon = ({
-  ...rest
-}: React.SVGAttributes<HTMLElement & SVGElement>) => {
+export const CloseIcon = ({ ...rest }: ComponentProps<"svg">) => {
   const { className: restClass, ...restWithoutClass } = rest;
 
   return (
-    // @ts-expect-error I'm not sure what the issue is here
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"

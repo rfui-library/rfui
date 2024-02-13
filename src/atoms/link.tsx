@@ -1,5 +1,5 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 import { NewTabIcon } from "../icons/new-tab-icon";
 
 export type LinkType = {
@@ -9,7 +9,7 @@ export type LinkType = {
   _newTab?: boolean;
   _includeNewTabIcon?: boolean;
   children: ReactNode;
-} & React.LinkHTMLAttributes<HTMLAnchorElement>;
+} & ComponentProps<"a">;
 
 /** *
  * @function Link

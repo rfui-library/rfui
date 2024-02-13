@@ -1,11 +1,11 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 
 export type ULType = {
   bulletType?: "bullet" | "check" | "arrow" | "triangle" | "none";
   bulletLocation?: "inside" | "outside";
   children: ReactNode;
-} & React.OlHTMLAttributes<HTMLUListElement>;
+} & ComponentProps<"ul">;
 
 /** *
  * @function UL

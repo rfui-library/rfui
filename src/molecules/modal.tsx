@@ -1,5 +1,6 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { CloseIcon } from "../icons/close-icon";
 
 export type ModalType = {
@@ -7,7 +8,7 @@ export type ModalType = {
   close: () => void;
   heading?: string;
   children: ReactNode;
-} & React.HTMLAttributes<HTMLDialogElement>;
+} & ComponentProps<"dialog">;
 
 /** *
  * @function Modal

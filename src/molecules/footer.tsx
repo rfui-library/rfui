@@ -1,5 +1,5 @@
+import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { ReactNode } from "react";
 import { Link } from "../atoms/link";
 import { Container, ContainerType } from "../helpers/container";
 import { Flex } from "../helpers/flex";
@@ -9,7 +9,7 @@ export type FooterType = {
   size?: ContainerType["size"];
   background?: "neutral" | "none";
   children: ReactNode;
-} & Omit<React.HTMLAttributes<HTMLElement>, "size">;
+} & Omit<ComponentProps<"footer">, "size">;
 
 /** *
  * @function Footer
