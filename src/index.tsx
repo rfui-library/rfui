@@ -59,6 +59,12 @@ export {
   RadioButtonCardGroupItemType,
   RadioButtonCardGroupType,
 } from "./molecules/radio-button-card-group";
+export {
+  RadioButtonGroup,
+  RadioButtonGroupItem,
+  RadioButtonGroupItemType,
+  RadioButtonGroupType,
+} from "./molecules/radio-button-group";
 export { Stepper, StepperType } from "./molecules/stepper";
 export { TabSection, Tabs, TabsType } from "./molecules/tabs";
 
