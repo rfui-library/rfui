@@ -2,7 +2,6 @@ import type { ComponentProps } from "react";
 import * as React from "react";
 import { Checkbox } from "../atoms/checkbox";
 import { Input } from "../atoms/input";
-import { RadioButton } from "../atoms/radio-button";
 import { Switch } from "../atoms/switch";
 import { Flex } from "../helpers/flex";
 import { XCircleIcon } from "../icons/x-circle-icon";
@@ -110,17 +109,6 @@ export const FormField = ({
           name={name}
           value={value}
           required={required}
-          className={`mt-1 ${inputRest?.className}`}
-          {...inputRest}
-        />
-      ) : type === "radio" ? (
-        <RadioButton
-          id={id}
-          name={name}
-          value={value}
-          required={required}
-          size={size}
-          invalid={invalid}
           className={`mt-1 ${inputRest?.className}`}
           {...inputRest}
         />
