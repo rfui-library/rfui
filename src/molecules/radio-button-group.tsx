@@ -7,7 +7,7 @@ export type RadioButtonGroupType = {
   name?: string;
   onChange?: (newSelectedVal: RadioButtonType["value"]) => void;
   children: ReactNode;
-};
+} & ComponentProps<"div">;
 
 export type RadioButtonGroupItemType = {
   name?: string;
@@ -39,9 +39,12 @@ export const RadioButtonGroup = ({
   name,
   children,
   onChange,
+  ...rest
 }: RadioButtonGroupType) => {
+  const { className: restClass, ...restWithoutClass } = rest;
+
   return (
-    <Stack className="gap-3">
+    <Stack className={`gap-3 ${restClass}`} {...restWithoutClass}>
       {React.Children.toArray(children)
         // deno-lint-ignore no-explicit-any
         .map((child: any) =>

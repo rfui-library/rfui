@@ -10,6 +10,11 @@ import { Textarea } from "../atoms/textarea";
 import { Flex } from "../helpers/flex";
 import { XCircleIcon } from "../icons/x-circle-icon";
 import { PasswordInput } from "../molecules/password-input";
+import type { RadioButtonGroupType } from "../molecules/radio-button-group";
+import {
+  RadioButtonGroup,
+  RadioButtonGroupItem,
+} from "../molecules/radio-button-group";
 
 export type FormFieldType = {
   label: string;
@@ -28,6 +33,10 @@ export type FormFieldType = {
   rounded?: "square" | "sm" | "lg" | "full";
   invalid?: boolean;
   errorText?: string;
+  radioButtonGroupOptions?: {
+    value: string;
+    display: string;
+  }[];
   selectOptions?: {
     value: string;
     display: string;
@@ -38,6 +47,10 @@ export type FormFieldType = {
   >;
   textareaRest?: Omit<
     TextareaType,
+    "id" | "name" | "value" | "required" | "invalid"
+  >;
+  radioButtonGroupRest?: Omit<
+    RadioButtonGroupType,
     "id" | "name" | "value" | "required" | "invalid"
   >;
   selectRest?: Omit<
@@ -69,9 +82,11 @@ export const FormField = ({
   rounded,
   invalid = false,
   errorText,
+  radioButtonGroupOptions,
   selectOptions,
   inputRest,
   textareaRest,
+  radioButtonGroupRest,
   selectRest,
   ...rest
 }: FormFieldType) => {
@@ -157,6 +172,17 @@ export const FormField = ({
           className={`block w-full ${textareaRest?.className}`}
           {...textareaRest}
         ></Textarea>
+      ) : type === "radio-button-group" && radioButtonGroupOptions ? (
+        <RadioButtonGroup
+          id={id}
+          name={name as string}
+          className={`block w-full ${radioButtonGroupRest?.className}`}
+          {...radioButtonGroupRest}
+        >
+          {radioButtonGroupOptions.map(({ value, display }) => (
+            <RadioButtonGroupItem value={value}>{display}</RadioButtonGroupItem>
+          ))}
+        </RadioButtonGroup>
       ) : type === "select" && selectOptions ? (
         <Select
           id={id}
