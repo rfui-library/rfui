@@ -2,7 +2,10 @@ import type { ComponentProps } from "react";
 import * as React from "react";
 import { Checkbox } from "../atoms/checkbox";
 import { Input } from "../atoms/input";
+import type { SelectType } from "../atoms/select";
+import { Select } from "../atoms/select";
 import { Switch } from "../atoms/switch";
+import type { TextareaType } from "../atoms/textarea";
 import { Textarea } from "../atoms/textarea";
 import { Flex } from "../helpers/flex";
 import { XCircleIcon } from "../icons/x-circle-icon";
@@ -25,12 +28,20 @@ export type FormFieldType = {
   rounded?: "square" | "sm" | "lg" | "full";
   invalid?: boolean;
   errorText?: string;
+  selectOptions?: {
+    value: string;
+    display: string;
+  }[];
   inputRest?: Omit<
     ComponentProps<"input">,
     "name" | "value" | "type" | "required" | "size" | "rounded" | "invalid"
   >;
   textareaRest?: Omit<
-    ComponentProps<"textarea">,
+    TextareaType,
+    "id" | "name" | "value" | "required" | "invalid"
+  >;
+  selectRest?: Omit<
+    SelectType,
     "id" | "name" | "value" | "required" | "invalid"
   >;
 } & Omit<ComponentProps<"div">, "size">;
@@ -58,8 +69,10 @@ export const FormField = ({
   rounded,
   invalid = false,
   errorText,
+  selectOptions,
   inputRest,
   textareaRest,
+  selectRest,
   ...rest
 }: FormFieldType) => {
   const id = crypto.randomUUID();
@@ -144,6 +157,20 @@ export const FormField = ({
           className={`block w-full ${textareaRest?.className}`}
           {...textareaRest}
         ></Textarea>
+      ) : type === "select" && selectOptions ? (
+        <Select
+          id={id}
+          name={name}
+          value={value}
+          required={required}
+          invalid={invalid}
+          className={`block w-full ${selectRest?.className}`}
+          {...selectRest}
+        >
+          {selectOptions.map(({ value, display }) => (
+            <option value={value}>{display}</option>
+          ))}
+        </Select>
       ) : (
         <Input
           id={id}
