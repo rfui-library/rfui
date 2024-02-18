@@ -5,6 +5,7 @@ import { Stack } from "../helpers/stack";
 
 export type RadioButtonGroupType = {
   name?: string;
+  selectedValue?: RadioButtonType["value"];
   onChange?: (newSelectedVal: RadioButtonType["value"]) => void;
   children: ReactNode;
 } & ComponentProps<"div">;
@@ -37,8 +38,9 @@ export type RadioButtonGroupItemType = {
 
 export const RadioButtonGroup = ({
   name,
-  children,
+  selectedValue,
   onChange,
+  children,
   ...rest
 }: RadioButtonGroupType) => {
   const { className: restClass, ...restWithoutClass } = rest;
@@ -50,6 +52,9 @@ export const RadioButtonGroup = ({
         .map((child: any) =>
           React.cloneElement(child, {
             name,
+            radioButtonRest: {
+              checked: selectedValue === child.props.value,
+            },
             onClick: () => {
               if (onChange) {
                 onChange(child.props.value);
