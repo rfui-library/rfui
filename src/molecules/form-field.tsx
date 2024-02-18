@@ -16,6 +16,17 @@ import {
   RadioButtonGroupItem,
 } from "../molecules/radio-button-group";
 
+type ExcludedInputProps =
+  | "name"
+  | "value"
+  | "type"
+  | "required"
+  | "size"
+  | "rounded"
+  | "invalid"
+  | "onChange"
+  | "onInput";
+
 export type FormFieldType = {
   label: string;
   name?: ComponentProps<"input">["name"];
@@ -43,22 +54,12 @@ export type FormFieldType = {
     value: string;
     display: string;
   }[];
-  inputRest?: Omit<
-    ComponentProps<"input">,
-    "name" | "value" | "type" | "required" | "size" | "rounded" | "invalid"
-  >;
-  textareaRest?: Omit<
-    TextareaType,
-    "id" | "name" | "value" | "required" | "invalid"
-  >;
-  radioButtonGroupRest?: Omit<
-    RadioButtonGroupType,
-    "id" | "name" | "value" | "required" | "invalid"
-  >;
-  selectRest?: Omit<
-    SelectType,
-    "id" | "name" | "value" | "required" | "invalid"
-  >;
+  onChange?: (e: any) => void;
+  onInput?: (e: any) => void;
+  inputRest?: Omit<ComponentProps<"input">, ExcludedInputProps>;
+  textareaRest?: Omit<TextareaType, ExcludedInputProps>;
+  radioButtonGroupRest?: Omit<RadioButtonGroupType, ExcludedInputProps>;
+  selectRest?: Omit<SelectType, ExcludedInputProps>;
 } & Omit<ComponentProps<"div">, "size">;
 
 /** *
@@ -86,6 +87,8 @@ export const FormField = ({
   errorText,
   radioButtonGroupOptions,
   selectOptions,
+  onChange,
+  onInput,
   inputRest,
   textareaRest,
   radioButtonGroupRest,
@@ -141,6 +144,8 @@ export const FormField = ({
           size={size}
           invalid={invalid}
           className={`mt-1 ${inputRest?.className}`}
+          onChange={onChange}
+          onInput={onInput}
           {...inputRest}
         />
       ) : type === "switch" ? (
@@ -150,6 +155,8 @@ export const FormField = ({
           value={value}
           required={required}
           className={`mt-1 ${inputRest?.className}`}
+          onChange={onChange}
+          onInput={onInput}
           {...inputRest}
         />
       ) : type === "rfui-password-input" ? (
@@ -162,6 +169,8 @@ export const FormField = ({
           rounded={rounded}
           invalid={invalid}
           className={`block w-full ${inputRest?.className}`}
+          onChange={onChange}
+          onInput={onInput}
           {...inputRest}
         />
       ) : type === "textarea" ? (
@@ -172,6 +181,8 @@ export const FormField = ({
           required={required}
           invalid={invalid}
           className={`block w-full ${textareaRest?.className}`}
+          onChange={onChange}
+          onInput={onInput}
           {...textareaRest}
         ></Textarea>
       ) : type === "radio-button-group" && radioButtonGroupOptions ? (
@@ -179,6 +190,15 @@ export const FormField = ({
           id={id}
           name={name as string}
           className={`block w-full ${radioButtonGroupRest?.className}`}
+          onChange={(newVal) => {
+            if (onChange) {
+              onChange({
+                target: {
+                  value: newVal,
+                },
+              });
+            }
+          }}
           {...radioButtonGroupRest}
         >
           {radioButtonGroupOptions.map(({ value, display }) => (
@@ -193,6 +213,8 @@ export const FormField = ({
           required={required}
           invalid={invalid}
           className={`block w-full ${selectRest?.className}`}
+          onChange={onChange}
+          onInput={onInput}
           {...selectRest}
         >
           {selectOptions.map(({ value, display }) => (
@@ -210,6 +232,8 @@ export const FormField = ({
           rounded={rounded}
           invalid={invalid}
           className={`block w-full ${inputRest?.className}`}
+          onChange={onChange}
+          onInput={onInput}
           {...inputRest}
         />
       )}
