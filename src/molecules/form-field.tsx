@@ -3,6 +3,7 @@ import * as React from "react";
 import { Checkbox } from "../atoms/checkbox";
 import { Input } from "../atoms/input";
 import { Switch } from "../atoms/switch";
+import { Textarea } from "../atoms/textarea";
 import { Flex } from "../helpers/flex";
 import { XCircleIcon } from "../icons/x-circle-icon";
 import { PasswordInput } from "../molecules/password-input";
@@ -11,7 +12,11 @@ export type FormFieldType = {
   label: string;
   name?: ComponentProps<"input">["name"];
   value?: ComponentProps<"input">["value"];
-  type?: ComponentProps<"input">["type"] | "rfui-password-input" | "switch";
+  type?:
+    | ComponentProps<"input">["type"]
+    | "switch"
+    | "rfui-password-input"
+    | "textarea";
   required?: boolean;
   requiredIndicator?: "text" | "asterisk" | "none";
   optionalIndicator?: "text" | "asterisk" | "none";
@@ -23,6 +28,10 @@ export type FormFieldType = {
   inputRest?: Omit<
     ComponentProps<"input">,
     "name" | "value" | "type" | "required" | "size" | "rounded" | "invalid"
+  >;
+  textareaRest?: Omit<
+    ComponentProps<"textarea">,
+    "id" | "name" | "value" | "required" | "invalid"
   >;
 } & Omit<ComponentProps<"div">, "size">;
 
@@ -50,6 +59,7 @@ export const FormField = ({
   invalid = false,
   errorText,
   inputRest,
+  textareaRest,
   ...rest
 }: FormFieldType) => {
   const id = crypto.randomUUID();
@@ -124,6 +134,16 @@ export const FormField = ({
           className={`block w-full ${inputRest?.className}`}
           {...inputRest}
         />
+      ) : type === "textarea" ? (
+        <Textarea
+          id={id}
+          name={name}
+          value={value}
+          required={required}
+          invalid={invalid}
+          className={`block w-full ${textareaRest?.className}`}
+          {...textareaRest}
+        ></Textarea>
       ) : (
         <Input
           id={id}
