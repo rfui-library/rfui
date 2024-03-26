@@ -1,0 +1,14 @@
+{
+  "name": "@rfui-library/rfui",
+  "version": "0.1.29",
+  "exports": "./mod.ts",
+  "publish": {
+    "exclude": [
+      ".github",
+      ".vscode",
+      ".gitignore",
+      ".prettierignore",
+      ".prettierrc"
+    ]
+  }
+}
