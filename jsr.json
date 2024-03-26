@@ -1,7 +1,7 @@
 {
   "name": "@rfui-library/rfui",
   "version": "0.1.29",
-  "exports": "./mod.ts",
+  "exports": "./src/mod.ts",
   "publish": {
     "exclude": [
       ".github",
