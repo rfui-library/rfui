@@ -1,20 +1,20 @@
 import type { ComponentProps } from "react";
 import * as React from "react";
-import { Checkbox } from "../atoms/checkbox";
-import { Input } from "../atoms/input";
-import type { SelectType } from "../atoms/select";
-import { Select } from "../atoms/select";
-import { Switch } from "../atoms/switch";
-import type { TextareaType } from "../atoms/textarea";
-import { Textarea } from "../atoms/textarea";
-import { Flex } from "../helpers/flex";
-import { XCircleIcon } from "../icons/x-circle-icon";
-import { PasswordInput } from "../molecules/password-input";
-import type { RadioButtonGroupType } from "../molecules/radio-button-group";
+import { Checkbox } from "../atoms/checkbox.tsx";
+import { Input } from "../atoms/input.tsx";
+import type { SelectType } from "../atoms/select.tsx";
+import { Select } from "../atoms/select.tsx";
+import { Switch } from "../atoms/switch.tsx";
+import type { TextareaType } from "../atoms/textarea.tsx";
+import { Textarea } from "../atoms/textarea.tsx";
+import { Flex } from "../helpers/flex.tsx";
+import { XCircleIcon } from "../icons/x-circle-icon.tsx";
+import { PasswordInput } from "../molecules/password-input.tsx";
+import type { RadioButtonGroupType } from "../molecules/radio-button-group.tsx";
 import {
   RadioButtonGroup,
   RadioButtonGroupItem,
-} from "../molecules/radio-button-group";
+} from "../molecules/radio-button-group.tsx";
 
 type ExcludedInputProps =
   | "name"

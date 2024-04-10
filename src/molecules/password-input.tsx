@@ -1,8 +1,8 @@
 import type { ComponentProps } from "react";
 import * as React from "react";
 import { useState } from "react";
-import { Input, InputType } from "../atoms/input";
-import { Flex } from "../helpers/flex";
+import { Input, InputType } from "../atoms/input.tsx";
+import { Flex } from "../helpers/flex.tsx";
 
 export type PasswordInputType = {
   defaultVisibility?: "hidden" | "shown";
@@ -33,7 +33,7 @@ export const PasswordInput = ({
   ...inputProps
 }: PasswordInputType) => {
   const [shouldShow, setShouldShow] = useState(
-    defaultVisibility === "hidden" ? false : true,
+    defaultVisibility === "hidden" ? false : true
   );
   const toggleShouldShow = () => {
     setShouldShow((v) => !v);

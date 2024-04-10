@@ -1,8 +1,7 @@
 import type { ComponentProps, ReactNode } from "react";
-import * as React from "react";
-import { Link } from "../../atoms/link";
-import { Container } from "../../helpers/container";
-import { ChevronRightIcon } from "../../icons/chevron-right";
+import { Link } from "../../atoms/link.tsx";
+import { Container } from "../../helpers/container.tsx";
+import { ChevronRightIcon } from "../../icons/chevron-right.tsx";
 
 export const NavbarItem = ({
   href,

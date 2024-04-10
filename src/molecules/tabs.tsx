@@ -1,7 +1,6 @@
 import type { ComponentProps, ReactNode } from "react";
-import * as React from "react";
 import { useState } from "react";
-import { Flex } from "../helpers/flex";
+import { Flex } from "../helpers/flex.tsx";
 
 export type TabsType = {
   fullWidth?: boolean;

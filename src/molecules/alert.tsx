@@ -1,8 +1,7 @@
 import type { ComponentProps, ReactNode } from "react";
-import * as React from "react";
 import { useState } from "react";
-import { Flex } from "../helpers/flex";
-import { CloseIcon } from "../icons/close-icon";
+import { Flex } from "../helpers/flex.tsx";
+import { CloseIcon } from "../icons/close-icon.tsx";
 
 export type AlertType = {
   variant?: "success" | "info" | "warning" | "danger" | "neutral";
@@ -108,16 +107,16 @@ const getComponents = (children: ReactNode) => {
   }
 
   const alertHeader = childrenArray.find(
-    (child: any) => child && child.type && child.type.name === AlertHeader.name,
+    (child: any) => child && child.type && child.type.name === AlertHeader.name
   );
 
   const alertBody = childrenArray.find(
-    (child: any) => child && child.type && child.type.name === AlertBody.name,
+    (child: any) => child && child.type && child.type.name === AlertBody.name
   );
 
   if (!alertBody) {
     throw new Error(
-      "An `AlertBody` is needed if you pass an array of elements to `Alert` as `children`.",
+      "An `AlertBody` is needed if you pass an array of elements to `Alert` as `children`."
     );
   }
 

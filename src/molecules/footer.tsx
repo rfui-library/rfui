@@ -1,9 +1,9 @@
 import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { Link } from "../atoms/link";
-import { Container, ContainerType } from "../helpers/container";
-import { Flex } from "../helpers/flex";
-import { Stack } from "../helpers/stack";
+import { Link } from "../atoms/link.tsx";
+import { Container, ContainerType } from "../helpers/container.tsx";
+import { Flex } from "../helpers/flex.tsx";
+import { Stack } from "../helpers/stack.tsx";
 
 export type FooterType = {
   size?: ContainerType["size"];

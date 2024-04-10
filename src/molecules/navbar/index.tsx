@@ -5,9 +5,9 @@ import { Flex } from "../../helpers/flex.tsx";
 import { Stack } from "../../helpers/stack.tsx";
 import { getComponents } from "./get-components.tsx";
 
-export { NavbarItem } from "./navbar-item";
-export { NavbarLeft } from "./navbar-left";
-export { NavbarRight } from "./navbar-right";
+export { NavbarItem } from "./navbar-item.tsx";
+export { NavbarLeft } from "./navbar-left.tsx";
+export { NavbarRight } from "./navbar-right.tsx";
 
 export type NavbarType = {
   size?: ContainerType["size"];

@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
-import * as React from "react";
-import { RadioButton, RadioButtonType } from "../atoms/radio-button";
-import { Flex } from "../helpers/flex";
-import { Stack } from "../helpers/stack";
+import { RadioButton, RadioButtonType } from "../atoms/radio-button.tsx";
+import { Flex } from "../helpers/flex.tsx";
+import { Stack } from "../helpers/stack.tsx";
 
 export type RadioButtonCardGroupType = {
   selectedItemName: string | null;
@@ -65,10 +64,10 @@ export const RadioButtonCardGroup = ({
             rounded === "square"
               ? "--spacing-0"
               : rounded === "sm"
-                ? "--spacing-1"
-                : rounded === "lg"
-                  ? "--spacing-2"
-                  : "--default-roundedness"
+              ? "--spacing-1"
+              : rounded === "lg"
+              ? "--spacing-2"
+              : "--default-roundedness"
           });
         }
 
@@ -95,7 +94,7 @@ export const RadioButtonCardGroup = ({
             React.cloneElement(child, {
               isSelected: selectedItemName === child.props.value,
               onClick: onChange,
-            }),
+            })
           )}
       </Stack>
     </>

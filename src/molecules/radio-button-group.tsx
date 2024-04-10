@@ -1,7 +1,7 @@
 import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { RadioButton, RadioButtonType } from "../atoms/radio-button";
-import { Stack } from "../helpers/stack";
+import { RadioButton, RadioButtonType } from "../atoms/radio-button.tsx";
+import { Stack } from "../helpers/stack.tsx";
 
 export type RadioButtonGroupType = {
   name?: string;
@@ -63,7 +63,7 @@ export const RadioButtonGroup = ({
                 onChange(child.props.value);
               }
             },
-          }),
+          })
         )}
     </Stack>
   );

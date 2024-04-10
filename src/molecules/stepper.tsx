@@ -1,7 +1,6 @@
 import type { ComponentProps } from "react";
-import * as React from "react";
 import { useState } from "react";
-import { Flex } from "../helpers/flex";
+import { Flex } from "../helpers/flex.tsx";
 
 export type StepperType = {
   name?: string;

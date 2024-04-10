@@ -1,5 +1,4 @@
 import type { ComponentProps, ReactNode } from "react";
-import * as React from "react";
 
 export type CardType = {
   rounded?: "square" | "sm" | "lg";
@@ -110,20 +109,20 @@ const getComponents = (children: ReactNode) => {
   }
 
   const cardHeader = childrenArray.find(
-    (child: any) => child && child.type && child.type.name === CardHeader.name,
+    (child: any) => child && child.type && child.type.name === CardHeader.name
   );
 
   const cardBody = childrenArray.find(
-    (child: any) => child && child.type && child.type.name === CardBody.name,
+    (child: any) => child && child.type && child.type.name === CardBody.name
   );
 
   const cardFooter = childrenArray.find(
-    (child: any) => child && child.type && child.type.name === CardFooter.name,
+    (child: any) => child && child.type && child.type.name === CardFooter.name
   );
 
   if (!cardHeader && !cardBody && !cardFooter) {
     throw new Error(
-      "A `CardHeader`, `CardBody` or `CardFooter` is needed if you pass an array of elements to `Card` as `children`.",
+      "A `CardHeader`, `CardBody` or `CardFooter` is needed if you pass an array of elements to `Card` as `children`."
     );
   }
 
