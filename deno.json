@@ -1,6 +1,10 @@
 {
   "name": "@rfui-library/rfui",
   "version": "0.1.29",
+  "tasks": {
+    "typecheck": "deno check **/*.ts",
+    "lint": "deno lint"
+  },
   "imports": {
     "react": "npm:react@18.2.0"
   },
