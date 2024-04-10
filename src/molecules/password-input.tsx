@@ -31,7 +31,7 @@ export const PasswordInput = ({
   containerProps,
   ...inputProps
 }: PasswordInputType) => {
-  const [shouldShow, setShouldShow] = useState<boolean>(
+  const [shouldShow, setShouldShow] = useState(
     defaultVisibility === "hidden" ? false : true
   );
   const toggleShouldShow = () => {

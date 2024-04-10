@@ -6,7 +6,7 @@
     "lint": "deno lint"
   },
   "imports": {
-    "react": "npm:react@18.2.0"
+    "react": "https://esm.sh/react@18.2.0"
   },
   "exports": "./mod.ts",
   "publish": {
