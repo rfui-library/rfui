@@ -1,5 +1,4 @@
 import type { ComponentProps, ReactNode } from "react";
-import * as React from "react";
 
 export type BadgeType = {
   type?: "neutral" | "info" | "success" | "warning" | "danger";

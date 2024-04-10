@@ -1,5 +1,3 @@
-import * as React from "react";
-
 export const ChevronRightIcon = ({ ...rest }) => {
   const { className: restClass, ...restWithoutClass } = rest;
 

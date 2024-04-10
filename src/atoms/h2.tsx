@@ -1,6 +1,5 @@
 import type { ComponentProps, ReactNode } from "react";
-import * as React from "react";
-import { Link } from "./link";
+import { Link } from "./link.tsx";
 
 export type H2Type = {
   inPageLink?: string;

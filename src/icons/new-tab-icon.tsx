@@ -1,5 +1,3 @@
-import * as React from "react";
-
 // https://ux.stackexchange.com/a/55424/39046
 export const NewTabIcon = () => {
   return (

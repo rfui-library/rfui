@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from "react";
-import * as React from "react";
-import { Stack } from "../helpers/stack";
+import React from "react";
+import { Stack } from "../helpers/stack.tsx";
 
 export type TextType = {
   size?: "sm" | "md" | "lg";

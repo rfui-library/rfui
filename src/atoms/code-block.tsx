@@ -1,5 +1,4 @@
 import type { ComponentProps } from "react";
-import * as React from "react";
 import { useEffect } from "react";
 
 export type CodeBlockType = {

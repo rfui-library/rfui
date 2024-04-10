@@ -1,9 +1,9 @@
 import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { Container, type ContainerType } from "../../helpers/container";
-import { Flex } from "../../helpers/flex";
-import { Stack } from "../../helpers/stack";
-import { getComponents } from "./get-components";
+import { Container, type ContainerType } from "../../helpers/container.tsx";
+import { Flex } from "../../helpers/flex.tsx";
+import { Stack } from "../../helpers/stack.tsx";
+import { getComponents } from "./get-components.tsx";
 
 export { NavbarItem } from "./navbar-item";
 export { NavbarLeft } from "./navbar-left";

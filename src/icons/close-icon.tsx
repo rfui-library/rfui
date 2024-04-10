@@ -1,5 +1,4 @@
 import type { ComponentProps } from "react";
-import * as React from "react";
 
 export const CloseIcon = ({ ...rest }: ComponentProps<"svg">) => {
   const { className: restClass, ...restWithoutClass } = rest;

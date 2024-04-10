@@ -1,5 +1,4 @@
 import type { ComponentProps } from "react";
-import * as React from "react";
 
 export type RadioButtonType = {
   size?: "sm" | "md" | "lg";

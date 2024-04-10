@@ -1,6 +1,5 @@
 import type { ComponentProps, ReactNode } from "react";
-import * as React from "react";
-import { NewTabIcon } from "../icons/new-tab-icon";
+import { NewTabIcon } from "../icons/new-tab-icon.tsx";
 
 export type LinkType = {
   href: string;

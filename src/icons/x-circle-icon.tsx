@@ -1,5 +1,3 @@
-import * as React from "react";
-
 export const XCircleIcon = ({ ...rest }) => {
   let { className: classNameFromRest, ...restWithoutClass } = rest;
 

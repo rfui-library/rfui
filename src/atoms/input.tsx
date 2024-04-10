@@ -1,5 +1,4 @@
 import type { ComponentProps } from "react";
-import * as React from "react";
 
 export type InputType = {
   size?: "sm" | "md" | "lg";
