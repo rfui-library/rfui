@@ -1,5 +1,5 @@
 import type { ComponentProps, ReactNode } from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Flex } from "../helpers/flex.tsx";
 
 export type TabsType = {
@@ -43,7 +43,7 @@ export const Tabs = ({ fullWidth = false, children, ...rest }: TabsType) => {
   );
 };
 
-const getTabNames = (children: ReactNode) => {
+const getTabNames = (children: ReactNode): string[] => {
   const childrenArray = React.Children.toArray(children);
 
   return childrenArray.map((child: any) => child.props.tabName);

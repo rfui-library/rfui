@@ -1,5 +1,4 @@
 import type { ComponentProps } from "react";
-import * as React from "react";
 import { Checkbox } from "../atoms/checkbox.tsx";
 import { Input } from "../atoms/input.tsx";
 import type { SelectType } from "../atoms/select.tsx";
@@ -190,7 +189,7 @@ export const FormField = ({
           id={id}
           name={name as string}
           className={`block w-full ${radioButtonGroupRest?.className}`}
-          onChange={(newVal) => {
+          onChange={(newVal: any) => {
             if (onChange) {
               onChange({
                 target: {

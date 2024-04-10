@@ -1,5 +1,4 @@
 import type { ComponentProps } from "react";
-import * as React from "react";
 import { useState } from "react";
 import { Input, InputType } from "../atoms/input.tsx";
 import { Flex } from "../helpers/flex.tsx";
@@ -32,11 +31,11 @@ export const PasswordInput = ({
   containerProps,
   ...inputProps
 }: PasswordInputType) => {
-  const [shouldShow, setShouldShow] = useState(
+  const [shouldShow, setShouldShow] = useState<boolean>(
     defaultVisibility === "hidden" ? false : true
   );
   const toggleShouldShow = () => {
-    setShouldShow((v) => !v);
+    setShouldShow((v: boolean) => !v);
   };
   const buttonClass = (() => {
     let s = "bg-neutral-50 px-2";

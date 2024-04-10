@@ -36,6 +36,7 @@ export const UL = ({
     triangle: "list-triangle",
     none: "list-none",
   };
+  // @ts-expect-error this works
   className += ` ${bulletTypeMap[bulletType]}`;
 
   if (bulletLocation === "inside" && bulletType === "bullet") {

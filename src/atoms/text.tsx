@@ -1,5 +1,4 @@
 import type { ComponentProps, ReactNode } from "react";
-import React from "react";
 import { Stack } from "../helpers/stack.tsx";
 
 export type TextType = {

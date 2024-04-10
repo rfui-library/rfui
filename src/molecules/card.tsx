@@ -1,4 +1,5 @@
 import type { ComponentProps, ReactNode } from "react";
+import React from "react";
 
 export type CardType = {
   rounded?: "square" | "sm" | "lg";

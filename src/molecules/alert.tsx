@@ -1,5 +1,5 @@
 import type { ComponentProps, ReactNode } from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { Flex } from "../helpers/flex.tsx";
 import { CloseIcon } from "../icons/close-icon.tsx";
 
