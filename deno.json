@@ -14,13 +14,7 @@
   },
   "exports": "./mod.ts",
   "publish": {
-    "exclude": [
-      ".github",
-      ".vscode",
-      ".gitignore",
-      ".prettierignore",
-      ".prettierrc"
-    ]
+    "exclude": [".github", ".vscode", ".gitignore"]
   },
   "compilerOptions": {
     "jsx": "react-jsx",
