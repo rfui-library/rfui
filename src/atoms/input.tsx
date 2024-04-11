@@ -19,7 +19,7 @@ export const Input = ({
   rounded,
   invalid = false,
   ...rest
-}: InputType) => {
+}: InputType): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className =
     "border border-neutral-500 px-2 py-1 w-full focus:outline-none focus:border-neutral-900 focus:shadow-sm";

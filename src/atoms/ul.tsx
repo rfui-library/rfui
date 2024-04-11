@@ -25,7 +25,7 @@ export const UL = ({
   bulletLocation = "inside",
   children,
   ...rest
-}: ULType) => {
+}: ULType): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "rfui-unordered-list flex flex-col gap-2 list-outside";
 
@@ -36,7 +36,6 @@ export const UL = ({
     triangle: "list-triangle",
     none: "list-none",
   };
-  // @ts-expect-error this works
   className += ` ${bulletTypeMap[bulletType]}`;
 
   if (bulletLocation === "inside" && bulletType === "bullet") {

@@ -27,7 +27,7 @@ export const Alert = ({
   isDismissable = true,
   children,
   ...rest
-}: AlertType) => {
+}: AlertType): JSX.Element | null => {
   const borderMap = {
     success: "border-supporting-green-500",
     info: "border-primary-500",

@@ -1,5 +1,5 @@
 // https://ux.stackexchange.com/a/55424/39046
-export const NewTabIcon = () => {
+export const NewTabIcon = (): JSX.Element => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

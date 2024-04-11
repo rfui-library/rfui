@@ -12,7 +12,10 @@ export type BlockquoteType = {
  * @example
  * <Blockquote>All models are wrong. Some models are useful.</Blockquote>
  */
-export const Blockquote = ({ children, ...rest }: BlockquoteType) => {
+export const Blockquote = ({
+  children,
+  ...rest
+}: BlockquoteType): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className =
     "border-l border-neutral-300 pl-5 text-neutral-700 flex flex-col gap-3";

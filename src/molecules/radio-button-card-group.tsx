@@ -47,7 +47,7 @@ export const RadioButtonCardGroup = ({
   padding = "md",
   rounded,
   children,
-}: RadioButtonCardGroupType) => {
+}: RadioButtonCardGroupType): JSX.Element => {
   const id = crypto.randomUUID();
   let containerClass = `radio-button-card-group-${id}`;
 
@@ -91,7 +91,7 @@ export const RadioButtonCardGroup = ({
       <Stack className={containerClass}>
         {React.Children.toArray(children)
           .filter(React.isValidElement)
-          .map((child: React.ReactElement<RadioButtonCardGroupItemType>) =>
+          .map((child: any) =>
             React.cloneElement(child, {
               isSelected: selectedItemName === child.props.value,
               onClick: onChange,
@@ -109,7 +109,7 @@ export const RadioButtonCardGroupItem = ({
   radioButtonRest,
   onClick,
   children,
-}: RadioButtonCardGroupItemType) => {
+}: RadioButtonCardGroupItemType): JSX.Element => {
   let containerClass =
     "radio-button-card-group-item border items-center cursor-pointer";
 

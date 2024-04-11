@@ -33,7 +33,7 @@ export const CheckboxCardGroup = ({
   padding = "md",
   rounded,
   children,
-}: CheckboxCardGroupType) => {
+}: CheckboxCardGroupType): JSX.Element => {
   const id = crypto.randomUUID();
   let containerClass = `checkbox-card-group-${id}`;
 
@@ -84,7 +84,7 @@ export const CheckboxCardGroupItem = ({
   onChange,
   checkboxRest,
   children,
-}: CheckboxCardGroupItemType) => {
+}: CheckboxCardGroupItemType): JSX.Element => {
   const [isChecked, setIsChecked] = useState(defaultIsChecked);
   const handleClick = () => {
     if (onChange) {

@@ -19,7 +19,7 @@ export const Textarea = ({
   invalid = false,
   children,
   ...rest
-}: TextareaType) => {
+}: TextareaType): JSX.Element => {
   const { className: restClass, ...resstWithoutClass } = rest;
   let className =
     "border border-neutral-500 px-2 py-1 focus:outline-none focus:border-neutral-900 focus:shadow-sm";

@@ -12,7 +12,7 @@ export type H1Type = {
  * @example
  * <H1>Heading</H1>
  */
-export const H1 = ({ children, ...rest }: H1Type) => {
+export const H1 = ({ children, ...rest }: H1Type): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "text-4xl text-neutral-700 mt-9 mb-7 max-w-prose";
 

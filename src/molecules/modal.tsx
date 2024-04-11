@@ -25,7 +25,7 @@ export const Modal = ({
   heading,
   children,
   ...rest
-}: ModalType) => {
+}: ModalType): JSX.Element => {
   const dialogRef = useRef<HTMLDialogElement | null>(null);
   const { className: restClass, ...restWithoutClass } = rest;
   const containerClass = ` w-[600px] p-4 rounded backdrop:backdrop-blur-sm ${restClass}`;

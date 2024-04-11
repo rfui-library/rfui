@@ -1,4 +1,8 @@
-export const ChevronRightIcon = ({ ...rest }) => {
+import type { ComponentProps } from "react";
+
+export const ChevronRightIcon = ({
+  ...rest
+}: ComponentProps<"svg">): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
 
   return (
