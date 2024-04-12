@@ -3,14 +3,10 @@
   "version": "0.1.29",
   "tasks": {
     "typecheck": "deno check **/*.ts",
-    "lint": "deno lint",
-    "esm:add": "deno run -A https://esm.sh/v135 add",
-    "esm:update": "deno run -A https://esm.sh/v135 update",
-    "esm:remove": "deno run -A https://esm.sh/v135 remove"
+    "lint": "deno lint"
   },
   "imports": {
-    "react": "https://esm.sh/v135/react@18.2.0",
-    "react/": "https://esm.sh/v135/react@18.2.0/"
+    "react": "npm:react@18.2.0"
   },
   "exports": "./mod.ts",
   "publish": {
@@ -25,11 +21,6 @@
   "lint": {
     "rules": {
       "exclude": ["no-explicit-any"]
-    }
-  },
-  "scopes": {
-    "https://esm.sh/v135/": {
-      "loose-envify": "https://esm.sh/v135/loose-envify@1.4.0"
     }
   }
 }
