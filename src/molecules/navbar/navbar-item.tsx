@@ -12,7 +12,7 @@ export const NavbarItem = ({
   href: string;
   isActive?: boolean;
   children: ReactNode;
-} & ComponentProps<"li">): JSX.Element => {
+} & ComponentProps<"li">) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let containerClass =
     "inline-block border-b border-b-neutral-200 sm:border-b-neutral-50 max-sm:hover:bg-neutral-100/50";

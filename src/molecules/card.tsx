@@ -28,7 +28,7 @@ export const Card = ({
   padding = "md",
   children,
   ...rest
-}: CardType): JSX.Element => {
+}: CardType) => {
   const { cardHeader, cardBody, cardFooter, isArray } = getComponents(children);
   const { className: restClass, ...restWithoutClass } = rest;
   let containerClass = "rfui-card max-w-full border border-neutral-100";

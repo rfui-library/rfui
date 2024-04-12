@@ -10,7 +10,7 @@ export type SwitchType = ComponentProps<"input">;
  * @example
  * <Switch />
  */
-export const Switch = ({ ...rest }: SwitchType): JSX.Element => {
+export const Switch = ({ ...rest }: SwitchType) => {
   // See `app.css`. Source: https://www.htmhell.dev/adventcalendar/2023/2/
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "rfui-switch cursor-pointer";

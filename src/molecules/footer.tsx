@@ -32,7 +32,7 @@ export const Footer = ({
   background = "neutral",
   children,
   ...rest
-}: FooterType): JSX.Element => {
+}: FooterType) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let containerClass = "w-full py-8 md:py-10 mt-10 md:mt-12";
 
@@ -62,11 +62,7 @@ export const Footer = ({
   );
 };
 
-export const FooterColumn = ({
-  children,
-}: {
-  children: ReactNode;
-}): JSX.Element => {
+export const FooterColumn = ({ children }: { children: ReactNode }) => {
   return <Stack className="gap-5">{children}</Stack>;
 };
 
@@ -76,7 +72,7 @@ export const FooterHeading = ({
 }: {
   background?: "neutral" | "none";
   children: ReactNode;
-}): JSX.Element => {
+}) => {
   const textColor =
     background === "neutral" ? "text-neutral-200" : "text-neutral-500";
 
@@ -91,7 +87,7 @@ export const FooterItem = ({
 }: {
   href: string;
   children: ReactNode;
-}): JSX.Element => {
+}) => {
   return (
     <Link href={href} className="text-lg" underline="hover">
       {children}

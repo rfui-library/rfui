@@ -42,7 +42,7 @@ export const RadioButtonGroup = ({
   onChange,
   children,
   ...rest
-}: RadioButtonGroupType): JSX.Element => {
+}: RadioButtonGroupType) => {
   const { className: restClass, ...restWithoutClass } = rest;
 
   return (
@@ -75,7 +75,7 @@ export const RadioButtonGroupItem = ({
   radioButtonRest,
   children,
   ...rest
-}: RadioButtonGroupItemType): JSX.Element => {
+}: RadioButtonGroupItemType) => {
   const { className: restClass, ...restWithoutClass } = rest;
 
   return (

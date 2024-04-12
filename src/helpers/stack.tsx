@@ -16,7 +16,7 @@ export type StackType = {
  *   <div>bottom</div>
  * </Stack>
  */
-export const Stack = ({ children, ...rest }: StackType): JSX.Element => {
+export const Stack = ({ children, ...rest }: StackType) => {
   const { className: classFromRest, ...restWithoutClass } = rest;
   let classValue = "flex flex-col";
 

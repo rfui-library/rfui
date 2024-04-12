@@ -12,10 +12,7 @@ export type HighlightType = {
  * @example
  * <div>Lorem ipsum <Highlight>dolor</Highlight> sit amet, consectetur.</div>
  */
-export const Highlight = ({
-  children,
-  ...rest
-}: HighlightType): JSX.Element => {
+export const Highlight = ({ children, ...rest }: HighlightType) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "bg-primary-100";
 

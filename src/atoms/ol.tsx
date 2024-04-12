@@ -21,7 +21,7 @@ export const OL = ({
   bulletLocation = "inside",
   children,
   ...rest
-}: OLType): JSX.Element => {
+}: OLType) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "list-decimal flex flex-col gap-2";
 

@@ -93,7 +93,7 @@ export const FormField = ({
   radioButtonGroupRest,
   selectRest,
   ...rest
-}: FormFieldType): JSX.Element => {
+}: FormFieldType) => {
   const id = crypto.randomUUID();
   const [smallFontClass, normalFontClass] = (() => {
     switch (size) {

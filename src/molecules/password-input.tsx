@@ -30,7 +30,7 @@ export const PasswordInput = ({
   defaultVisibility = "hidden",
   containerProps,
   ...inputProps
-}: PasswordInputType): JSX.Element => {
+}: PasswordInputType) => {
   const [shouldShow, setShouldShow] = useState(
     defaultVisibility === "hidden" ? false : true
   );

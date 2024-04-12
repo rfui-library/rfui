@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 
-export const CloseIcon = ({ ...rest }: ComponentProps<"svg">): JSX.Element => {
+export const CloseIcon = ({ ...rest }: ComponentProps<"svg">) => {
   const { className: restClass, ...restWithoutClass } = rest;
 
   return (

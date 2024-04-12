@@ -56,7 +56,7 @@ export const Table = ({
   stickyFirstColumn = false,
   children,
   ...rest
-}: TableType): JSX.Element => {
+}: TableType) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "rfui-table";
 

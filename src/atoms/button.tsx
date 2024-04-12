@@ -35,7 +35,7 @@ export const Button = ({
   loadingContent,
   children,
   ...rest
-}: ButtonType): JSX.Element => {
+}: ButtonType) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "font-semibold";
 

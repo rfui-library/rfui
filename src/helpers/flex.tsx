@@ -16,7 +16,7 @@ export type FlexType = {
  *   <div>right</div>
  * </Flex>
  */
-export const Flex = ({ children, ...rest }: FlexType): JSX.Element => {
+export const Flex = ({ children, ...rest }: FlexType) => {
   const { className: classFromRest, ...restWithoutClass } = rest;
   let classValue = "flex";
 

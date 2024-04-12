@@ -35,7 +35,7 @@ export const Navbar = ({
   sticky = false,
   children,
   ...rest
-}: NavbarType): JSX.Element => {
+}: NavbarType) => {
   const { navbarLeft, navbarRight } = getComponents(children);
   const { className: restClass, ...restWithoutClass } = rest;
   let containerClass = "w-full px-auto";

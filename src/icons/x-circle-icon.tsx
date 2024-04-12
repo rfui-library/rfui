@@ -1,8 +1,4 @@
-import type { ComponentProps } from "react";
-
-export const XCircleIcon = ({
-  ...rest
-}: ComponentProps<"svg">): JSX.Element => {
+export const XCircleIcon = ({ ...rest }) => {
   let { className: classNameFromRest, ...restWithoutClass } = rest;
 
   if (!classNameFromRest) {

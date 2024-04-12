@@ -27,7 +27,7 @@ export const Select = ({
   invalid = false,
   children,
   ...rest
-}: SelectType): JSX.Element => {
+}: SelectType) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className =
     "border border-neutral-500 bg-[#fff] px-2 py-1 cursor-pointer focus:outline-none focus:border-neutral-900 focus:shadow-sm";

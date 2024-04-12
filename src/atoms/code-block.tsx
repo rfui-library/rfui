@@ -23,11 +23,7 @@ const lastName = 'Doe';
 const fullName = firstName + " " + lastName;`}
 />
  */
-export const CodeBlock = ({
-  code,
-  language,
-  ...rest
-}: CodeBlockType): JSX.Element => {
+export const CodeBlock = ({ code, language, ...rest }: CodeBlockType) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "block p-5 bg-neutral-50 whitespace-pre-wrap";
 

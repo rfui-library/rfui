@@ -17,11 +17,7 @@ export type TextType = {
  *   <p>Amet consectetur adipiscing elit duis tristique. Ac turpis egestas maecenas pharetra. Dui nunc mattis enim ut tellus. Egestas congue quisque egestas diam in.</p>
  * </Text>
  */
-export const Text = ({
-  size = "md",
-  children,
-  ...rest
-}: TextType): JSX.Element => {
+export const Text = ({ size = "md", children, ...rest }: TextType) => {
   const sizeMap = {
     sm: "text-sm",
     md: "text-lg",

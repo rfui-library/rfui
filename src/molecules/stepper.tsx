@@ -29,7 +29,7 @@ export const Stepper = ({
   min,
   max,
   ...rest
-}: StepperType): JSX.Element => {
+}: StepperType) => {
   const [value, setValue] = useState(startingValue);
   const increment = () => {
     setValue(value + 1);

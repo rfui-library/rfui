@@ -26,7 +26,7 @@ export const Link = ({
   _includeNewTabIcon = false,
   children,
   ...rest
-}: LinkType): JSX.Element => {
+}: LinkType) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "cursor-pointer relative";
 

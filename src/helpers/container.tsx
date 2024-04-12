@@ -19,7 +19,7 @@ export const Container = ({
   size = "lg",
   children,
   ...rest
-}: ContainerType): JSX.Element => {
+}: ContainerType) => {
   const { className: classFromRest, ...restWithoutClass } = rest;
   let classValue = "mx-6 lg:mx-auto";
 

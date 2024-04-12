@@ -23,7 +23,7 @@ export const RadioButton = ({
   size = "md",
   invalid = false,
   ...rest
-}: RadioButtonType): JSX.Element => {
+}: RadioButtonType) => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "rfui-radio-button accent-primary-500 cursor-pointer";
 
