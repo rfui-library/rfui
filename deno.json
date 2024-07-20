@@ -2,7 +2,7 @@
   "name": "@rfui-library/rfui",
   "version": "0.1.29",
   "tasks": {
-    "typecheck": "deno check **/*.ts",
+    "typecheck": "deno check **/*.ts && deno check **/*.tsx",
     "lint": "deno lint"
   },
   "imports": {
