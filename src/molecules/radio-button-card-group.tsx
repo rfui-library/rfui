@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import React from "react";
-import { RadioButton, RadioButtonType } from "../atoms/radio-button.tsx";
+import { RadioButton, type RadioButtonType } from "../atoms/radio-button.tsx";
 import { Flex } from "../helpers/flex.tsx";
 import { Stack } from "../helpers/stack.tsx";
 
@@ -47,7 +47,7 @@ export const RadioButtonCardGroup = ({
   padding = "md",
   rounded,
   children,
-}: RadioButtonCardGroupType) => {
+}: RadioButtonCardGroupType): JSX.Element => {
   const id = crypto.randomUUID();
   let containerClass = `radio-button-card-group-${id}`;
 
@@ -109,7 +109,7 @@ export const RadioButtonCardGroupItem = ({
   radioButtonRest,
   onClick,
   children,
-}: RadioButtonCardGroupItemType) => {
+}: RadioButtonCardGroupItemType): JSX.Element => {
   let containerClass =
     "radio-button-card-group-item border items-center cursor-pointer";
 

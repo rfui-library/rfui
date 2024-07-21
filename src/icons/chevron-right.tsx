@@ -1,4 +1,4 @@
-export const ChevronRightIcon = ({ ...rest }) => {
+export const ChevronRightIcon = ({ ...rest }): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
 
   return (

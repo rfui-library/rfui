@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 import { useState } from "react";
-import { Input, InputType } from "../atoms/input.tsx";
+import { Input, type InputType } from "../atoms/input.tsx";
 import { Flex } from "../helpers/flex.tsx";
 
 export type PasswordInputType = {
@@ -30,7 +30,7 @@ export const PasswordInput = ({
   defaultVisibility = "hidden",
   containerProps,
   ...inputProps
-}: PasswordInputType) => {
+}: PasswordInputType): JSX.Element => {
   const [shouldShow, setShouldShow] = useState(
     defaultVisibility === "hidden" ? false : true
   );

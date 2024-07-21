@@ -14,7 +14,7 @@ export type H2Type = {
  * @example
  * <H2>Subheading</H2>
  */
-export const H2 = ({ inPageLink, children, ...rest }: H2Type) => {
+export const H2 = ({ inPageLink, children, ...rest }: H2Type): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "text-2xl text-neutral-700 mt-8 mb-5 max-w-prose";
 

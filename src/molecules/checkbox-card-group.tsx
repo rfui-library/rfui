@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { useState } from "react";
-import { Checkbox, CheckboxType } from "../atoms/checkbox.tsx";
+import { Checkbox, type CheckboxType } from "../atoms/checkbox.tsx";
 import { Flex } from "../helpers/flex.tsx";
 import { Stack } from "../helpers/stack.tsx";
 
@@ -33,7 +33,7 @@ export const CheckboxCardGroup = ({
   padding = "md",
   rounded,
   children,
-}: CheckboxCardGroupType) => {
+}: CheckboxCardGroupType): JSX.Element => {
   const id = crypto.randomUUID();
   let containerClass = `checkbox-card-group-${id}`;
 
@@ -84,7 +84,7 @@ export const CheckboxCardGroupItem = ({
   onChange,
   checkboxRest,
   children,
-}: CheckboxCardGroupItemType) => {
+}: CheckboxCardGroupItemType): JSX.Element => {
   const [isChecked, setIsChecked] = useState(defaultIsChecked);
   const handleClick = () => {
     if (onChange) {

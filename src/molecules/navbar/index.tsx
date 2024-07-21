@@ -1,5 +1,4 @@
 import type { ComponentProps, ReactNode } from "react";
-import * as React from "react";
 import { Container, type ContainerType } from "../../helpers/container.tsx";
 import { Flex } from "../../helpers/flex.tsx";
 import { Stack } from "../../helpers/stack.tsx";
@@ -35,7 +34,7 @@ export const Navbar = ({
   sticky = false,
   children,
   ...rest
-}: NavbarType) => {
+}: NavbarType): JSX.Element => {
   const { navbarLeft, navbarRight } = getComponents(children);
   const { className: restClass, ...restWithoutClass } = rest;
   let containerClass = "w-full px-auto";

@@ -28,7 +28,7 @@ export const Card = ({
   padding = "md",
   children,
   ...rest
-}: CardType) => {
+}: CardType): JSX.Element => {
   const { cardHeader, cardBody, cardFooter, isArray } = getComponents(children);
   const { className: restClass, ...restWithoutClass } = rest;
   let containerClass = "rfui-card max-w-full border border-neutral-100";
@@ -138,7 +138,7 @@ const getComponents = (children: ReactNode) => {
 export const CardHeader = ({
   children,
   ...rest
-}: { children: ReactNode } & ComponentProps<"div">) => {
+}: { children: ReactNode } & ComponentProps<"div">): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "rfui-card-header";
 
@@ -156,7 +156,7 @@ export const CardHeader = ({
 export const CardBody = ({
   children,
   ...rest
-}: { children: ReactNode } & ComponentProps<"div">) => {
+}: { children: ReactNode } & ComponentProps<"div">): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "rfui-card-body";
 
@@ -174,7 +174,7 @@ export const CardBody = ({
 export const CardFooter = ({
   children,
   ...rest
-}: { children: ReactNode } & ComponentProps<"div">) => {
+}: { children: ReactNode } & ComponentProps<"div">): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "rfui-card-footer";
 

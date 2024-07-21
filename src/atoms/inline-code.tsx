@@ -14,7 +14,10 @@ export type InlineCodeType = {
  *   When I wrote <InlineCode>sayHello("John")</InlineCode> it didn't work.
  * </div>
  */
-export const InlineCode = ({ children, ...rest }: InlineCodeType) => {
+export const InlineCode = ({
+  children,
+  ...rest
+}: InlineCodeType): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "p-0.5 bg-neutral-50";
 

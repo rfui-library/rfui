@@ -23,7 +23,7 @@ export const Checkbox = ({
   size = "md",
   invalid = false,
   ...rest
-}: CheckboxType) => {
+}: CheckboxType): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "rfui-checkbox accent-primary-500 cursor-pointer";
 

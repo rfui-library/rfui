@@ -21,7 +21,7 @@ export const Badge = ({
   rounded,
   children,
   ...rest
-}: BadgeType) => {
+}: BadgeType): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
   let className = "inline";
 

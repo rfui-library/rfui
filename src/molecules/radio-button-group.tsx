@@ -1,6 +1,6 @@
 import type { ComponentProps, ReactNode } from "react";
 import * as React from "react";
-import { RadioButton, RadioButtonType } from "../atoms/radio-button.tsx";
+import { RadioButton, type RadioButtonType } from "../atoms/radio-button.tsx";
 import { Stack } from "../helpers/stack.tsx";
 
 export type RadioButtonGroupType = {
@@ -42,7 +42,7 @@ export const RadioButtonGroup = ({
   onChange,
   children,
   ...rest
-}: RadioButtonGroupType) => {
+}: RadioButtonGroupType): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
 
   return (
@@ -75,7 +75,7 @@ export const RadioButtonGroupItem = ({
   radioButtonRest,
   children,
   ...rest
-}: RadioButtonGroupItemType) => {
+}: RadioButtonGroupItemType): JSX.Element => {
   const { className: restClass, ...restWithoutClass } = rest;
 
   return (

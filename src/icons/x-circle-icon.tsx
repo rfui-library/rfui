@@ -1,4 +1,4 @@
-export const XCircleIcon = ({ ...rest }) => {
+export const XCircleIcon = ({ ...rest }): JSX.Element => {
   let { className: classNameFromRest, ...restWithoutClass } = rest;
 
   if (!classNameFromRest) {

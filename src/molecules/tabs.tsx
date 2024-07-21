@@ -19,7 +19,11 @@ export type TabsType = {
  *   <TabSection tabName="Third">Three</TabSection>
  * </Tabs>
  */
-export const Tabs = ({ fullWidth = false, children, ...rest }: TabsType) => {
+export const Tabs = ({
+  fullWidth = false,
+  children,
+  ...rest
+}: TabsType): JSX.Element => {
   const tabNames = getTabNames(children);
   const [activeTab, setActiveTab] = useState(tabNames[0]);
   const activeTabSection = getActiveTabSection(children, activeTab);
@@ -65,7 +69,7 @@ const Tab = ({
   activeTab: string;
   onClick: () => void;
   fullWidth: boolean;
-}) => {
+}): JSX.Element => {
   const isActive = tabName === activeTab;
   let containerClass = "rfui-tab px-5 text-center py-4 cursor-pointer";
 
@@ -91,6 +95,6 @@ export const TabSection = ({
 }: {
   tabName: string;
   children: ReactNode;
-}) => {
+}): JSX.Element => {
   return <>{children}</>;
 };
